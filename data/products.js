@@ -2,7 +2,7 @@ const products = [
   {
     primaryImage: "assets/products/hiking-plain-shirt.jpeg",
     secondaryImage: "assets/products/hiking-.jpeg",
-    title: "Outside Vibes T-Shirt Sunshine",
+    title: "Outside Vibes T-Shirt Charcoal",
     price: "59.95",
     rating: 5,
     reviews: "1,234",
@@ -12,7 +12,7 @@ const products = [
   {
     primaryImage: "assets/products/hiking-bottle.jpeg",
     secondaryImage: "assets/products/hiking-.jpeg",
-    title: "Hike Bottle Outside Vibes Forest Green",
+    title: "Hiking Bottle Outside Vibes",
     price: "39.95",
     rating: 4,
     reviews: "289",
@@ -22,7 +22,7 @@ const products = [
   {
     primaryImage: "assets/products/hiking-t-shirt.jpeg",
     secondaryImage: "assets/products/hiking-.jpeg",
-    title: "Rest in Nature T-Shirt Charcoal",
+    title: "Rest in Nature T-Shirt White",
     price: "69.95",
     rating: 5,
     reviews: "657",
@@ -32,7 +32,7 @@ const products = [
   {
     primaryImage: "assets/products/hiking-cap.jpeg",
     secondaryImage: "assets/products/hiking-.jpeg",
-    title: "Outside Vibes Cap Forest Green",
+    title: "Outside Vibes Cap Maroon",
     price: "29.95",
     rating: 5,
     reviews: "2,125",
@@ -42,7 +42,7 @@ const products = [
   {
     primaryImage: "assets/products/flannel-t-shirt.jpeg",
     secondaryImage: "assets/products/hiking-.jpeg",
-    title: "Rest in Nature T-Shirt Charcoal",
+    title: "Rest in Nature T-Shirt Flannel",
     price: "59.95",
     rating: 4,
     reviews: "984",

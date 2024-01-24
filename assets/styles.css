@@ -19,3 +19,8 @@ img {
     top: 1rem;
     user-select: none;
 }
+@media (max-width: 1024px) {
+    .products > .product-card:nth-child(n+5) {
+        display: none;
+    }
+}

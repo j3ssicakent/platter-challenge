@@ -26,7 +26,6 @@
                     let productCards = "";
                     products.forEach((product) => {
                         let bestSeller = discount = rating = "";
-                        console.log(product)
                         if (product.bestSeller == true) {
                             bestSeller = `<div class="tag bg-white text-black rounded-button font-display font-sm pt-[2px] left-4">
                                 Best Seller
@@ -67,6 +66,10 @@
                     document.querySelector('.products').innerHTML = productCards;
                 </script>
             </div>
+            <button class="show-more w-full rounded-button bg-primary-600 text-white lg:hidden py-2 my-3 text-center font-body font-semibold hover:bg-white hover:text-primary-600 border-2 hover:border-primary-600 transition">
+                Show More
+            </button>
         </div>
     </body>
+    <script src="assets/app.js"></script>
 </html>
