@@ -7,3 +7,15 @@ h3 {
     line-height: 22px;
     letter-spacing: 0.03em;
 }
+
+img {
+    user-select: none;
+}
+
+.tag {
+    border: 1px solid #000000;
+    padding: 0 8px;
+    position: absolute;
+    top: 1rem;
+    user-select: none;
+}

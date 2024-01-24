@@ -8,17 +8,41 @@
         <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,900&display=swap" rel="stylesheet">
         <script src="https://cdn.tailwindcss.com"></script>
         <script src="tailwind.config.js"></script>
+        <script src="data/products.js"></script>
         <link rel="stylesheet" href="assets/styles.css">
     </head>
 
     <body>
         <div class="w-full p-8 lg:max-w-screen-xl">
-            <div class="best-sellers flex justify-center md:justify-between md:items-center">
+            <div class="flex justify-center md:justify-between md:items-center">
                 <h1 class="font-heading text-primary-500 text-2xl md:text-4xl font-bold md:font-black">Best Sellers</h1>
                 <a href="#" class="shop-more gap-3 items-center hidden md:flex text-secondary-100 hover:underline transition">
                     <h6 class="capitalize font-body font-semibold text-sm">Shop all best sellers</h6>
                     <img src="assets/icons/arrow-right.svg" alt="Right arrow icon" class="w-4">
                 </a>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 mt-6">
+                <div class="product-card relative">
+                    <div class="tag bg-white text-black rounded-button font-display font-sm pt-[2px] left-4">
+                        Best Seller
+                    </div>
+                    <div class="tag bg-secondary-500 text-white rounded-button font-display font-sm pt-[2px] right-4">
+                        Save 15%
+                    </div>
+                    <img src="assets/products/hiking-plain-shirt.jpeg" alt="Outside Vibes T-Shirt Sunshine" class="rounded aspect-square object-cover" />
+                    <div class="flex flex-col gap-2 px-2 mt-4">
+                        <h3 class="font-display text-lg md:text-xl text-primary-600">Outside Vibes T-Shirt Sunshine</h3>
+                        <div class="flex gap-[2px] items-center">
+                            <img src="assets/icons/star.svg" alt="Star rating" class="w-4">
+                            <img src="assets/icons/star.svg" alt="Star rating" class="w-4">
+                            <img src="assets/icons/star.svg" alt="Star rating" class="w-4">
+                            <img src="assets/icons/star.svg" alt="Star rating" class="w-4">
+                            <img src="assets/icons/star.svg" alt="Star rating" class="w-4">
+                            <p class="font-body text-sm text-primary-100 font-normal pl-2">1,234 Reviews</p>
+                        </div>
+                        <p class="font-body text-lg text-primary-600 font-medium">$104.95</p>
+                    </div>
+                </div>
             </div>
         </div>
     </body>
