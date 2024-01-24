@@ -16,9 +16,37 @@ img {
     border: 1px solid #000000;
     padding: 0 8px;
     position: absolute;
-    top: 1rem;
+    top: 0.5rem;
     user-select: none;
 }
+
+.product-card {
+    min-width: 22%;
+}
+
+.products::-webkit-scrollbar {
+    height: 4px;
+    border-radius: 100px;
+}
+  
+.products:hover::-webkit-scrollbar-track {
+    background: #DDD6D7;
+    height: 4px;
+    border-radius: 100px;
+}
+
+.products:hover::-webkit-scrollbar-thumb {
+    background: #231F20;
+    height: 4px;
+    border-radius: 100px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #231F20;
+    border: 1px solid #231F20;
+    cursor: pointer;
+}
+
 @media (max-width: 1024px) {
     .products > .product-card:nth-child(n+5) {
         display: none;

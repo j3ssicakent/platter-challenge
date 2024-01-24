@@ -21,19 +21,19 @@
                     <img src="assets/icons/arrow-right.svg" alt="Right arrow icon" class="w-4">
                 </a>
             </div>
-            <div class="products grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
+            <div class="products grid grid-cols-1 sm:grid-cols-2 lg:flex gap-4 mt-6 overflow-auto pb-8">
                 <script>
                     let productCards = "";
                     products.forEach((product) => {
                         let bestSeller = discount = rating = "";
                         if (product.bestSeller == true) {
-                            bestSeller = `<div class="tag bg-white text-black rounded-button font-display font-sm pt-[2px] left-4">
+                            bestSeller = `<div class="tag bg-white text-black rounded-button font-display font-sm pt-[2px] left-2">
                                 Best Seller
                             </div>`;
                         }
 
                         if (product.discount != null) {
-                            discount = `<div class="tag bg-secondary-500 text-white rounded-button font-display font-sm pt-[2px] right-4">
+                            discount = `<div class="tag bg-secondary-500 text-white rounded-button font-display font-sm pt-[2px] right-2">
                                 Save ${product.discount*100}%
                             </div>`;
                         }
@@ -49,9 +49,10 @@
                         }
 
                         return productCards += `
-                            <div class="product-card relative">`
+                            <div class="product-card relative group cursor-pointer">`
                                 + bestSeller + discount +
-                                `<img src=${product.primaryImage} alt=${product.title} class="rounded aspect-square object-cover" />
+                                `<img src=${product.primaryImage} alt=${product.title} class="rounded aspect-square object-cover group-hover:hidden" />
+                                <img src=${product.secondaryImage} alt=${product.title} class="hidden rounded aspect-square object-cover group-hover:block" />
                                 <div class="flex flex-col gap-2 px-2 mt-4">
                                     <h3 class="font-display text-lg md:text-xl text-primary-600">${product.title}</h3>
                                     <div class="flex gap-[2px] items-center">`
