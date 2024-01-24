@@ -2,7 +2,7 @@ tailwind.config = {
     theme: {
         extend: {
             fontFamily: {
-                "heading": ["Source Serif 4", "serif"],
+                "heading": ["Source Serif", "serif"],
                 "body": ["Poppins", "sans-serif"],
                 "display": ["Bebas Neue", "sans-serif"],
             },
