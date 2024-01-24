@@ -13,7 +13,7 @@
     </head>
 
     <body>
-        <div class="w-full p-8 lg:max-w-screen-xl">
+        <div class="w-full p-8 lg:max-w-screen-xl mx-auto">
             <div class="flex justify-center md:justify-between md:items-center">
                 <h1 class="font-heading text-primary-500 text-2xl md:text-4xl font-bold md:font-black">Best Sellers</h1>
                 <a href="#" class="shop-more gap-3 items-center hidden md:flex text-secondary-100 hover:underline transition">
@@ -21,28 +21,51 @@
                     <img src="assets/icons/arrow-right.svg" alt="Right arrow icon" class="w-4">
                 </a>
             </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 mt-6">
-                <div class="product-card relative">
-                    <div class="tag bg-white text-black rounded-button font-display font-sm pt-[2px] left-4">
-                        Best Seller
-                    </div>
-                    <div class="tag bg-secondary-500 text-white rounded-button font-display font-sm pt-[2px] right-4">
-                        Save 15%
-                    </div>
-                    <img src="assets/products/hiking-plain-shirt.jpeg" alt="Outside Vibes T-Shirt Sunshine" class="rounded aspect-square object-cover" />
-                    <div class="flex flex-col gap-2 px-2 mt-4">
-                        <h3 class="font-display text-lg md:text-xl text-primary-600">Outside Vibes T-Shirt Sunshine</h3>
-                        <div class="flex gap-[2px] items-center">
-                            <img src="assets/icons/star.svg" alt="Star rating" class="w-4">
-                            <img src="assets/icons/star.svg" alt="Star rating" class="w-4">
-                            <img src="assets/icons/star.svg" alt="Star rating" class="w-4">
-                            <img src="assets/icons/star.svg" alt="Star rating" class="w-4">
-                            <img src="assets/icons/star.svg" alt="Star rating" class="w-4">
-                            <p class="font-body text-sm text-primary-100 font-normal pl-2">1,234 Reviews</p>
-                        </div>
-                        <p class="font-body text-lg text-primary-600 font-medium">$104.95</p>
-                    </div>
-                </div>
+            <div class="products grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
+                <script>
+                    let productCards = "";
+                    products.forEach((product) => {
+                        let bestSeller = discount = rating = "";
+                        console.log(product)
+                        if (product.bestSeller == true) {
+                            bestSeller = `<div class="tag bg-white text-black rounded-button font-display font-sm pt-[2px] left-4">
+                                Best Seller
+                            </div>`;
+                        }
+
+                        if (product.discount != null) {
+                            discount = `<div class="tag bg-secondary-500 text-white rounded-button font-display font-sm pt-[2px] right-4">
+                                Save ${product.discount*100}%
+                            </div>`;
+                        }
+
+                        for (i = 1; i <= 5; i++) {
+                            if (product.rating >= i) {
+                                rating += `<img src="assets/icons/star.svg" alt="Star rating" class="w-4">`;
+                            }
+                            else {
+                                rating += `<img src="assets/icons/gray-star.svg" alt="Star rating" class="w-4">`;
+                            }
+
+                        }
+
+                        return productCards += `
+                            <div class="product-card relative">`
+                                + bestSeller + discount +
+                                `<img src=${product.primaryImage} alt=${product.title} class="rounded aspect-square object-cover" />
+                                <div class="flex flex-col gap-2 px-2 mt-4">
+                                    <h3 class="font-display text-lg md:text-xl text-primary-600">${product.title}</h3>
+                                    <div class="flex gap-[2px] items-center">`
+                                    + rating +
+                                        `<p class="font-body text-sm text-primary-100 font-normal pl-2">${product.reviews} Reviews</p>
+                                    </div>
+                                    <p class="font-body text-lg text-primary-600 font-medium">$${product.price}</p>
+                                </div>
+                            </div>
+                        `
+                    });
+                    document.querySelector('.products').innerHTML = productCards;
+                </script>
             </div>
         </div>
     </body>
