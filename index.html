@@ -13,15 +13,15 @@
     </head>
 
     <body>
-        <div class="w-full p-8 lg:max-w-screen-xl mx-auto">
-            <div class="flex justify-center md:justify-between md:items-center">
+        <div class="w-full py-8 mx-auto">
+            <div class="flex justify-center md:justify-between md:items-center px-8">
                 <h1 class="font-heading text-primary-500 text-2xl md:text-4xl font-bold md:font-black">Best Sellers</h1>
                 <a href="#" class="shop-more gap-3 items-center hidden md:flex text-secondary-100 hover:underline transition">
                     <h6 class="capitalize font-body font-semibold text-sm">Shop all best sellers</h6>
                     <img src="assets/icons/arrow-right.svg" alt="Right arrow icon" class="w-4">
                 </a>
             </div>
-            <div class="products grid grid-cols-1 sm:grid-cols-2 lg:flex gap-4 mt-6 overflow-auto pb-8">
+            <div class="products grid grid-cols-1 sm:grid-cols-2 lg:flex gap-4 overflow-x-auto m-8 scroll-p-6 pb-6 snap-x">
                 <script>
                     let productCards = "";
                     products.forEach((product) => {
@@ -45,14 +45,13 @@
                             else {
                                 rating += `<img src="assets/icons/gray-star.svg" alt="Star rating" class="w-4">`;
                             }
-
                         }
 
                         return productCards += `
-                            <div class="product-card relative group cursor-pointer">`
+                            <a href="#" class="product-card transition relative group">`
                                 + bestSeller + discount +
-                                `<img src=${product.primaryImage} alt=${product.title} class="rounded aspect-square object-cover group-hover:hidden" />
-                                <img src=${product.secondaryImage} alt=${product.title} class="hidden rounded aspect-square object-cover group-hover:block" />
+                                `<img src=${product.primaryImage} alt=${product.title} class="rounded aspect-square object-cover group-hover:hidden" width="500" height="500" />
+                                <img src=${product.secondaryImage} alt=${product.title} class="hidden rounded aspect-square object-cover group-hover:block" width="500" height="500" />
                                 <div class="flex flex-col gap-2 px-2 mt-4">
                                     <h3 class="font-display text-lg md:text-xl text-primary-600">${product.title}</h3>
                                     <div class="flex gap-[2px] items-center">`
@@ -61,15 +60,17 @@
                                     </div>
                                     <p class="font-body text-lg text-primary-600 font-medium">$${product.price}</p>
                                 </div>
-                            </div>
+                            </a>
                         `
                     });
                     document.querySelector('.products').innerHTML = productCards;
                 </script>
             </div>
-            <button class="show-more w-full rounded-button bg-primary-600 text-white lg:hidden py-2 my-3 text-center font-body font-semibold hover:bg-white hover:text-primary-600 border-2 hover:border-primary-600 transition">
-                Show More
-            </button>
+            <div class="px-8 -my-6">
+                <button class="show-more w-full rounded-button bg-primary-600 text-white lg:hidden py-2 text-center font-body font-semibold hover:bg-white hover:text-primary-600 border-2 hover:border-primary-600 transition">
+                    Show More
+                </button>
+            </div>
         </div>
     </body>
     <script src="assets/app.js"></script>

@@ -24,31 +24,45 @@ img {
     min-width: 22%;
 }
 
-.products::-webkit-scrollbar {
+::-webkit-scrollbar {
     height: 4px;
+    width: 6px;
     border-radius: 100px;
 }
   
-.products:hover::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
     background: #DDD6D7;
     height: 4px;
     border-radius: 100px;
 }
 
-.products:hover::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
     background: #231F20;
     height: 4px;
     border-radius: 100px;
 }
 
-::-webkit-scrollbar-thumb:hover {
+.products::-webkit-scrollbar-thumb:hover {
+    /* Height does not change on hover - create the same effect using outline */
+    /* height: 6px; */ 
+    outline: 1px solid #231F20;
     background: #231F20;
-    border: 1px solid #231F20;
     cursor: pointer;
 }
 
 @media (max-width: 1024px) {
     .products > .product-card:nth-child(n+5) {
-        display: none;
+        height: 0;
+        opacity: 0;
+    }
+
+    .products {
+        overflow: hidden;
+        transition: max-height 2s ease-in-out;
+    }
+    
+    .products.open {
+        transition: max-height 2s ease-in-out;
+        
     }
 }
