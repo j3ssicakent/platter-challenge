@@ -44,7 +44,6 @@
 								Save {{ product.compare_at_price_max | minus: product.price | times: 100.0 | divided_by: product.compare_at_price_max | money_without_currency | times: 100 | remove: '.0' }}%
 							</div>
 						{% endif %}
-						\
 						<img src="{{ product.images[0].src }}" alt="{{ product.images[0].alt }}" class="rounded aspect-square object-cover group-hover:hidden" width="500" height="500" loading="lazy" />
 						{% if product.images.size > 1 %}
 							<img src="{{ product.images[1].src }}" alt="{{ product.images[1].alt }}" class="hidden rounded aspect-square object-cover group-hover:block" width="500" height="500" loading="lazy" />
