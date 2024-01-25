@@ -3,13 +3,18 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Camping, Hiking &amp; Outdoor | Gear &amp; Equipment</title>
+        <meta name="description" content="Everything you'll need for outdoor pursuits - including hiking, camping, trail running, and more!">
+        <meta name="keywords" content="camping, hiking, outdoor gear, outdoor equipment, trail running shoes">
+        <meta name="author" content="Jessica Kent">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,900&display=swap" rel="stylesheet">
+        <link rel="icon" type="image/x-icon" href="./favicon.ico">
         <script src="https://cdn.tailwindcss.com"></script>
         <script src="tailwind.config.js"></script>
-        <script src="data/products.js"></script>
-        <link rel="stylesheet" href="assets/styles.css">
+        <script src="./data/products.js"></script>
+        <link rel="stylesheet" href="./assets/styles.css">
     </head>
 
     <body>
@@ -18,13 +23,13 @@
                 <h1 class="font-heading text-primary-500 text-2xl md:text-4xl font-bold md:font-black">Best Sellers</h1>
                 <a href="#" class="shop-more gap-3 items-center hidden md:flex text-secondary-100 hover:underline transition">
                     <h6 class="capitalize font-body font-semibold text-sm">Shop all best sellers</h6>
-                    <img src="assets/icons/arrow-right.svg" alt="Right arrow icon" class="w-4">
+                    <img src="./assets/icons/arrow-right.svg" alt="Right arrow icon" class="w-4" />
                 </a>
             </div>
             <div class="products grid grid-cols-1 sm:grid-cols-2 lg:flex gap-4 overflow-x-auto m-8 scroll-p-6 pb-6 snap-x">
                 <script>
                     let productCards = "";
-                    products.forEach((product) => {
+                    products.map((product) => {
                         let bestSeller = discount = rating = "";
                         if (product.bestSeller == true) {
                             bestSeller = `<div class="tag bg-white text-black rounded-button font-display font-sm pt-[2px] left-2">
@@ -40,18 +45,18 @@
 
                         for (i = 1; i <= 5; i++) {
                             if (product.rating >= i) {
-                                rating += `<img src="assets/icons/star.svg" alt="Star rating" class="w-4">`;
+                                rating += `<img src="./assets/icons/star.svg" alt="Star rating" class="w-4" />`;
                             }
                             else {
-                                rating += `<img src="assets/icons/gray-star.svg" alt="Star rating" class="w-4">`;
+                                rating += `<img src="./assets/icons/gray-star.svg" alt="Star rating" class="w-4" />`;
                             }
                         }
 
                         return productCards += `
                             <a href="#" class="product-card transition relative group">`
                                 + bestSeller + discount +
-                                `<img src=${product.primaryImage} alt=${product.title} class="rounded aspect-square object-cover group-hover:hidden" width="500" height="500" />
-                                <img src=${product.secondaryImage} alt=${product.title} class="hidden rounded aspect-square object-cover group-hover:block" width="500" height="500" />
+                                `<img src=${product.primaryImage} alt=${product.title} class="rounded aspect-square object-cover group-hover:hidden" width="700" height="700" />
+                                <img src=${product.secondaryImage} alt=${product.title} class="hidden rounded aspect-square object-cover group-hover:block" width="700" height="700" />
                                 <div class="flex flex-col gap-2 px-2 mt-4">
                                     <h3 class="font-display text-lg md:text-xl text-primary-600">${product.title}</h3>
                                     <div class="flex gap-[2px] items-center">`
@@ -73,5 +78,5 @@
             </div>
         </div>
     </body>
-    <script src="assets/app.js"></script>
+    <script src="./assets/app.js"></script>
 </html>
